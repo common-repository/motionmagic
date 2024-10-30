@@ -1,0 +1,383 @@
+/* 
+2D hover effects
+
+Please feel free to comment and give me some pointers on how to write my code more efficiently
+
+*/
+.kocka{
+  transition: all 700ms ease;
+
+}
+.kocka:hover {
+  transition: all 700ms ease!important;
+  transition-delay: 0ms!important;
+}
+/* Grow */
+.kito-grow:hover,
+.grow-editor {
+  transform: scale(1.2);
+  
+}
+/* Shrink */
+.kito-shrink:hover,
+.shrink-editor {
+  transform: scale(0.8);
+  
+}
+/* Pulse */
+@-webkit-keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+.kito-pulse:hover,
+.pulse-editor {
+  
+  -webkit-animation: pulse 1.2s linear infinite;
+  animation: pulse 1.2s linear infinite;
+}
+.kito-transient{
+  
+  -webkit-animation: pulse 1.2s linear infinite;
+  animation: pulse 1.2s linear infinite;
+}
+/* Push */
+@-webkit-keyframes push {
+  50% {
+    transform: scale(0.9);
+  }
+}
+.kito-push:hover,
+.push-editor {
+  
+  -webkit-animation: push 0.3s 1;
+  animation: push 0.3s 1;
+}
+/* Bounce-in */
+@-webkit-keyframes bounce-in {
+  60% {
+    transform: scale(1.2);
+  }
+  70%,
+  90% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+.kito-bounce-in:hover,
+.bounce-in-editor {
+  
+  -webkit-animation: bounce-in ease-in 1.3s 1;
+  animation: bounce-in 1.3s ease-in 1;
+}
+/* Grow-rotate */
+.kito-grow-rotate,
+.grow-rotate-editor {
+  letter-spacing: 0;
+}
+.kito-grow-rotate:hover,
+.grow-rotate-editor {
+  
+  transform: scale(1.2) rotate(10deg);
+}
+/* Float */
+.kito-float:hover,
+.float-editor {
+  
+  transform: translateY(-10px);
+}
+/* Sink */
+.kito-sink:hover,
+.sink-editor {
+  
+  transform: translateY(10px);
+}
+/* Skew */
+.kito-skew:hover,
+.skew-editor {
+  
+  transform: skew(-10deg);
+}
+/* Skew Forward */
+.kito-skew-forward,
+.kito-skew-backward,
+.skew-forward-editor,
+.skew-backward-editor {
+  letter-spacing: 0;
+  transform-origin: 0 100%;
+  font-size: 16px;
+}
+.kito-skew-forward:hover {
+  
+  transform: skew(-10deg);
+}
+/* Skew Backward */
+.kito-skew-backward:hover,
+.skew-forward-editor,
+.skew-backward-editor {
+  
+  transform: skew(10deg);
+}
+/* Buzz */
+@-webkit-keyframes buzz {
+  25% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+.kito-buzz:hover,
+.buzz-editor {
+  
+  -webkit-animation: buzz ease-in 70ms infinite;
+  animation: buzz 70ms ease-in infinite;
+}
+
+/* Background Transitions */
+.bgT {
+  background: #feb41c;
+  color: #444;
+}
+/* Fade */
+.motion-fade:hover {
+  
+  background: #8bb8c9;
+  color: #fff;
+}
+/* SweapTo */
+.sweaptoR,
+.sweaptoL {
+  letter-spacing: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.sweaptoR:before {
+  content: "";
+  height: 4px;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s linear, background 1ms linear;
+}
+.sweaptoR:hover:before {
+  background: #6c8ed6;
+  width: 120px;
+}
+.sweaptoL:before {
+  content: "";
+  height: 4px;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: width 0.3s linear, background 1ms linear;
+}
+.sweaptoL:hover:before {
+  background: #6c8ed6;
+  width: 120px;
+}
+/* Underline and Overline */
+.underline,
+.overline {
+  position: relative;
+}
+.underline:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 0;
+  transition: height 0.3s linear, background 0.3s linear;
+}
+.underline:hover:before {
+  background: #6c8ed6;
+  height: 4px;
+}
+.overline:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 0;
+  transition: height 0.3s linear, background 0.3s linear;
+}
+.overline:hover:before {
+  height: 4px;
+  background: #6c8ed6;
+}
+/* Border fade */
+.border-fade {
+  border: 0px solid transparent;
+  box-sizing: border-box;
+  transition: border 0.2s linear;
+}
+.border-fade:hover {
+  
+  border: 6px solid #6c8ed6;
+}
+/* Round */
+.round {
+  transition: all 0.4s linear;
+}
+.round:hover {
+  border-radius: 20%;
+}
+/* Underline from middle */
+.underline-from-middle {
+  position: relative;
+}
+.underline-from-middle:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 49%;
+  width: 2px;
+  height: 4px;
+  transition: transform 0.3s linear, background 10ms linear;
+}
+.underline-from-middle:hover:before {
+  background: #6c8ed6;
+  transform: scaleX(60);
+}
+/* Shadows */
+.shD {
+  background: #cc4452;
+}
+/* Shadow */
+.shadow {
+  box-shadow: 0px 13px 0px -20px #fff;
+  transition: all 0.3s linear;
+}
+.shadow:hover {
+  
+  box-shadow: 0px 23px 6px -20px #fff;
+}
+/* Rotating */
+@-webkit-keyframes rotaate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.rotating:hover:before {
+  content: "";
+  position: absolute;
+  display: table;
+  height: 76px;
+  width: 116px;
+  border: 2px dashed #6c8ed6;
+  -webkit-animation: rotaate 10s infinite linear;
+  animation: rotaate 10s infinite linear;
+}
+/* Text shadow */
+@-webkit-keyframes slova {
+  50% {
+    text-shadow: 9px 9px 1px #008000, 18px 18px 1px LightBlue,
+      27px 27px 1px #ff0, -9px -9px 1px #213133, -18px -18px 1px #ffa500,
+      -27px -27px 1px #c0c0c0;
+  }
+}
+@-webkit-keyframes slova {
+  50% {
+    text-shadow: 9px 9px 1px #008000, 18px 18px 1px LightBlue,
+      27px 27px 1px #ff0, -9px -9px 1px #213133, -18px -18px 1px #ffa500,
+      -27px -27px 1px #c0c0c0;
+  }
+}
+.slova:hover {
+  -webkit-animation: slova 2s infinite cubic-bezier(0.5, 0, 0.53, 1);
+  animation: slova 2s infinite cubic-bezier(0.5, 0, 0.53, 1);
+}
+@-webkit-keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+@-webkit-keyframes push {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@keyframes push {
+  50% {
+    transform: scale(0.9);
+  }
+}
+@-webkit-keyframes bounce-in {
+  60% {
+    transform: scale(1.2);
+  }
+  70%,
+  90% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+@keyframes bounce-in {
+  60% {
+    transform: scale(1.2);
+  }
+  70%,
+  90% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+@-webkit-keyframes buzz {
+  25% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes buzz {
+  25% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+@-webkit-keyframes rotaate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotaate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
